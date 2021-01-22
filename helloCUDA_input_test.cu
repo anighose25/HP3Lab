@@ -168,11 +168,7 @@ int main(void)
             exit(EXIT_FAILURE);
         }
 
-        // Free host memory
-        free(h_A);
-        free(h_B);
-        free(h_C);
-
+        
         // Reset the device and exit
         // cudaDeviceReset causes the driver to clean up all state. While
         // not mandatory in normal operation, it is good practice.  It is also
@@ -191,6 +187,11 @@ int main(void)
             printf("%.2f ",h_C[i]);
         }       
         printf("\n");
+	// Free host memory
+        free(h_A);
+        free(h_B);
+        free(h_C);
+
         //printf("Done\n");
     
     }
